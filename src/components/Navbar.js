@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton, Box, Menu, MenuItem, Avatar, MenuList } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { useState } from 'react';
+import { Avatar } from '@mui/material';
 import { useAuth } from '../context/AuthContext'; // Import useAuth from AuthContext
-import { useLocation } from 'react-router-dom'; // Import useLocation to access URL
+import { useLocation, Link } from 'react-router-dom'; // Import useLocation and Link to access URL
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup } from './ui/dropdown-menu';
+import { AvatarIcon } from "@radix-ui/react-icons";
+import { Button } from './ui/button';
 
 const Navbar = () => {
+    const stripeIsConfigured = process.env.NEXT_PUBLIC_STRIPE_IS_ENABLED === "true";
+    const packsIsEnabled = process.env.NEXT_PUBLIC_TUNE_TYPE === "packs";
+    const credits = null;
     const [anchorEl, setAnchorEl] = useState(null);
     const { user, handleLogout, handleGoogleSignIn } = useAuth(); // Get user and auth methods from AuthContext
     const location = useLocation(); // Get the current location
@@ -22,54 +27,54 @@ const Navbar = () => {
     console.log(hasSessionId);
 
     return (
-        <AppBar>
-            <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    Twitter(X) Bot
-                </Typography>
-                <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                    <Button color="inherit" href="/">Home</Button>
-                    {hasSessionId && <Button color="inherit" href="/dashboard">Dashboard</Button>} {/* Show Dashboard only if session_id is present */}
-                    {user ? (
-                        <>
-                            <IconButton onClick={handleMenu} sx={{ marginLeft: 2 }}>
-                                <Avatar alt={user.displayName} src={user.photoURL} />
-                            </IconButton>
-                        </>
-                    ) : (
-                        <Button color="inherit" onClick={handleGoogleSignIn}>Log in</Button>
-                    )}
-                </Box>
-                <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                    {user ? (
-                        <>
-                            <IconButton onClick={handleMenu} sx={{ marginLeft: 2 }}>
-                                <Avatar alt={user.displayName} src={user.photoURL} />
-                            </IconButton>
-                        </>
-                    ) : (
-                        <Button color="inherit" onClick={handleGoogleSignIn}>Log in</Button>
-                    )}
-                    <IconButton color="inherit" aria-label="menu" onClick={handleMenu}>
-                        <MenuIcon />
-                    </IconButton>
-                </Box>
-                <Menu
-                    anchorEl={anchorEl}
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >
-                    {user && (
-                        <MenuList>
-                            <MenuItem onClick={handleClose} component="a" href="/dashboard">Settings</MenuItem>
-                            <MenuItem onClick={() => { handleLogout(); handleClose(); }} component="a" href="/">
-                                Logout
-                            </MenuItem>
-                        </MenuList>
-                    )}
-                </Menu>
-            </Toolbar>
-        </AppBar>
+        <div className="flex w-full px-4 lg:px-40 py-4 items-center border-b text-center gap-8 justify-between">
+        <div className="flex gap-2 h-full">
+          <Link to="/">
+            <h2 className="font-bold">Polywood AI</h2>
+          </Link>
+        </div>
+        {user && (
+          <div className="hidden lg:flex flex-row gap-2">
+            <Link to="/overview">
+              <Button variant={"ghost"}>Home</Button>
+            </Link>
+            {packsIsEnabled && (
+              <Link to="/overview/packs">
+                <Button variant={"ghost"}>Packs</Button>
+              </Link>
+            )}
+            {stripeIsConfigured && (
+              <Link to="/get-credits">
+                <Button variant={"ghost"}>Get Credits</Button>
+              </Link>
+            )}
+          </div>
+        )}
+        <div className="flex gap-4 lg:ml-auto">
+          {!user && (
+            <Link onClick={handleGoogleSignIn}>
+              <Button variant={"ghost"}>Login / Signup </Button>
+            </Link>
+          )}
+          {user && (
+            <div className="flex flex-row gap-4 text-center align-middle justify-center">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild className="cursor-pointer">
+                    <Avatar alt={user.displayName} src={user.photoURL}  />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56 z-50 mt-3">
+                  <DropdownMenuLabel className="text-primary text-center overflow-hidden text-ellipsis" onClick={handleClose}>
+                    Settings
+                  </DropdownMenuLabel>
+                  <DropdownMenuLabel className="text-primary text-center overflow-hidden text-ellipsis" onClick={() => { handleLogout(); handleClose(); }} >
+                    Log Out
+                  </DropdownMenuLabel>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          )}
+        </div>
+      </div>
     );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography, Button, Grid2, Box, Paper, ThemeProvider, createTheme, CircularProgress } from '@mui/material'; // Added CircularProgress import
+import { Typography, Grid2, Box, Paper, CircularProgress } from '@mui/material'; // Added CircularProgress import
 import { styled } from '@mui/system';
 import { useAuth } from '../context/AuthContext';
 import CheckoutForm from '../components/CheckoutForm';
@@ -7,52 +7,9 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material'; // Import modal components
 import CheckoutButton from '../components/CheckoutButton';
-
-const theme = createTheme({
-  breakpoints: {
-    values: {
-      laptop: 1024,
-      tablet: 640,
-      mobile: 0,
-      desktop: 1280,
-    },
-  },
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-  typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    h5: {
-      fontWeight: 600,
-    },
-    subtitle1: {
-      fontWeight: 500,
-    },
-  },
-});
-
-const StyledBox = styled(Box)(({ theme }) => ({
-  flexGrow: 1,
-  overflow: 'hidden',
-  padding: theme.spacing(2),
-}));
-
-const StyledPaper = styled(Paper)(({ theme }) => ({
-  width: '100%',
-  margin: 'auto',
-  overflow: 'hidden',
-  padding: theme.spacing(2),
-}));
-
-const StyledImage = styled('img')({
-  width: '100%',
-  height: 'auto'
-});
+import { Button } from "../components/ui/button";
+import { Table } from '../components/ui/table';
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const stripePromise = loadStripe('pk_test_O6QoURACZWbmsfz29j4g4RT0005NVC3ANG');
@@ -70,61 +27,44 @@ const Home = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <StyledBox>
-        <StyledPaper>
-          <Grid2 container spacing={2} alignItems="center" flexDirection="row" marginTop={5}>
-            <Grid2 size={{mobile: 12, laptop: 6}} display="flex" alignItems="center" justifyContent="center">
-              <StyledImage src="buy-twitter-followers.webp" alt="Twitter Bot" />
-            </Grid2>
-            <Grid2 size={{mobile: 12, laptop: 6}} display="flex" flexDirection="column" justifyContent="center" textAlign="center">
-              <Typography variant="h5" gutterBottom>
-                Empower Your Twitter Experience
-              </Typography>
-              <Typography variant="subtitle1" gutterBottom>
-                Subscribe for only $8.99/month
-              </Typography>
-              <Typography variant="body2" gutterBottom>
-                Activate your Twitter(X) Bot today and start automating your Twitter interactions with ease! Our advanced features allow you to stay active, engage with followers, and grow your network without the constant manual effort.
-              </Typography>
-              <CheckoutButton />
-              <Dialog 
-                open={openModal} 
-                onClose={handleCloseModal} 
-                PaperProps={{
-                  style: {
-                    width: '500px',
-                    borderRadius: '16px',
-                    padding: '20px',
-                    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-                  },
-                }}
-              >
-                <DialogTitle sx={{ fontWeight: 'bold', fontSize: '1.5rem', textAlign: 'center' }}>Subscribe</DialogTitle>
-                <DialogContent>
-                <CircularProgress />
-                <CheckoutButton />
-
-                </DialogContent>
-                <DialogActions>
-                  <Button 
-                    onClick={handleCloseModal} 
-                    variant="outlined" 
-                    color="secondary" 
-                    sx={{ borderRadius: '8px' }}
-                  >
-                    Close
-                  </Button>
-                </DialogActions>
-              </Dialog>
-              {!user && <Button variant="contained" color="secondary" onClick={handleGoogleSignIn} sx={{ mt: 2, marginRight: 1 }}>
-                Sign in with Google
-              </Button>}
-            </Grid2>
-          </Grid2>
-        </StyledPaper>
-      </StyledBox>
-    </ThemeProvider>
+    <main className="flex flex-1 flex-col items-center py-16">
+    <div className="flex flex-col items-center">
+  <div className="flex flex-col lg:flex-row items-center gap-8 p-8 max-w-6xl w-full">
+    <div className="flex flex-col space-y-4 lg:w-1/2 w-full">
+      <h1 className="text-5xl font-bold">
+       Professional AI Comments Bot for Twitter.
+      </h1>
+      <p className="text-gray-600 text-lg">
+      Boost your Twitter engagement effortlessly with our AI-powered comments bot. Designed to help you connect with a broader audience and enhance your online presence on Twitter.
+      </p>
+      <div className="flex flex-col space-y-2">
+        <Link onClick={handleGoogleSignIn}>
+          <Button className="bg-blue-500 text-white  w-full lg:w-1/2">Get Your AI Comments Bot Now</Button>
+        </Link>
+        <p className="text-sm text-gray-500 italic">
+        Trusted by brands and influencers worldwide for increasing engagement and reach.
+        </p>
+      </div>
+      <div className="mt-4 text-gray-500">
+        <span>Already a member? </span>
+        <Link className="text-blue-600 hover:underline" onClick={handleGoogleSignIn}>
+          Sign In
+        </Link>
+        {/* {user && (
+          <CheckoutButton />
+        )} */}
+      </div>
+    </div>
+    <div className="lg:w-1/2 w-full mt-8 lg:mt-0">
+      <img
+        src="buy-twitter-followers.webp"
+        alt="AI Headshot Illustration"
+        className="rounded-lg object-cover w-full h-full"
+      />
+    </div>
+  </div>
+</div>
+    </main>
   );
 };
 
