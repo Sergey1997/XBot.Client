@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5001/api'; // Update with your server URL
+const API_URL = process.env.REACT_APP_API_URL; 
 
 // Function to create a customer
 export const createCustomer = async (email) => {
@@ -30,7 +30,6 @@ export const createSubscription = async (customerId, paymentMethodId, priceId) =
 
 export const createCheckoutSession = async (email, lineItems) => {
     try {
-        console.log(`${API_URL}/create-checkout-session`);
       const response = await axios.post(`${API_URL}/subscription/create-checkout-session`, { email, lineItems });
       return response.data; // Return the session ID
     } catch (error) {
