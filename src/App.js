@@ -1,45 +1,52 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import { AuthProvider } from "./context/AuthContext";
-import { ThemeProvider } from '@mui/material';
-import theme from './theme'; // Import your theme
-import './App.css'; // Importing App.css
-import { Suspense } from "react";
-import { Toaster } from "./components/ui/toaster";
-import ExplainerSection from "./components/ui/ExplainerSection";
-import PricingSection from "./components/ui/PricingSection";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Footer from './components/Footer'
+import { AuthProvider } from './context/AuthContext'
+import './App.css' // Importing App.css
+import { Suspense } from 'react'
+import { Toaster } from './components/ui/toaster'
+import ExplainerSection from './components/ui/ExplainerSection'
+import PricingSection from './components/ui/PricingSection'
+import CheckoutButton from './components/CheckoutButton'
+import TwitterCallbackPage from './components/TwitterCallbackPage'
+import Dashboard from './pages/Dashboard'
 
-export default function App({ children }) {
-
+export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-    <AuthProvider>
-      <Router>
-    <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        <section>
-          <Suspense
-            fallback={
-              <div className="flex w-full px-4 lg:px-40 py-4 items-center border-b text-center gap-8 justify-between h-[69px]" />
-            }
-          >
+    <Router>
+      <AuthProvider>
+        <div className="min-h-screen flex flex-col bg-white">
+          <Suspense fallback={<div>Loading...</div>}>
             <Navbar />
-
           </Suspense>
-        </section>
-        <div className="flex flex-col items-center">
-        <Home />
-        <ExplainerSection />
-        <PricingSection />
-        <Footer />
-        <Toaster />
+
+          {/* Define Routes */}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="flex flex-col items-center">
+                  {/* Components that should appear on the homepage */}
+                  <Home />
+                  <ExplainerSection />
+                  <PricingSection />
+                </div>
+              }
+            />
+            {/* Twitter Callback and Dashboard on their own distinct paths */}
+            <Route path="/twitter/callback" element={<TwitterCallbackPage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+
+          <div className="flex flex-col items-center">
+            {/* Footer should likely be outside to be on every page at the bottom */}
+            <Footer />
+          </div>
+
+          <Toaster />
         </div>
-      </body>
-    </html>
+      </AuthProvider>
     </Router>
-    </AuthProvider>
-    </ThemeProvider>
-  );
+  )
 }

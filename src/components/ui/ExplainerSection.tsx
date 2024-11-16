@@ -1,4 +1,3 @@
-
 export default function ExplainerSection() {
   return (
     <div className="w-full max-w-6xl mt-16 p-8 bg-gray-100 rounded-lg space-y-8">
@@ -10,10 +9,13 @@ export default function ExplainerSection() {
           <div className="text-3xl font-bold text-blue-600 bg-white border-2 border-blue-600 rounded-full w-10 h-10 flex items-center justify-center">
             1
           </div>
-          <h3 className="text-2xl font-semibold">Connect your Twitter account</h3>
+          <h3 className="text-2xl font-semibold">
+            Connect your Twitter account
+          </h3>
         </div>
         <p className="text-sm text-gray-600 text-center">
-        Just link your Twitter account to our bot with the necessary permissions.
+          Just link your Twitter account to our bot with the necessary
+          permissions.
         </p>
         <img
           src="example.png"
@@ -31,7 +33,8 @@ export default function ExplainerSection() {
           <h3 className="text-2xl font-semibold">Set your preferences</h3>
         </div>
         <p className="text-sm text-gray-600 text-center">
-        Choose who you want to target, which hashtags to use, and the style of your comments.
+          Choose who you want to target, which hashtags to use, and the style of
+          your comments.
         </p>
         <img
           src="blur.png"
@@ -46,10 +49,14 @@ export default function ExplainerSection() {
           <div className="text-3xl font-bold text-blue-600 bg-white border-2 border-blue-600 rounded-full w-10 h-10 flex items-center justify-center">
             3
           </div>
-          <h3 className="text-2xl font-semibold"> Let our AI work its magic </h3>
+          <h3 className="text-2xl font-semibold">
+            {' '}
+            Let our AI work its magic{' '}
+          </h3>
         </div>
         <p className="text-sm text-gray-600 text-center">
-        Our AI will smartly start commenting, saving you time and helping boost your Twitter activity!
+          Our AI will smartly start commenting, saving you time and helping
+          boost your Twitter activity!
         </p>
         <img
           src="result.png"
@@ -58,5 +65,5 @@ export default function ExplainerSection() {
         />
       </div>
     </div>
-  );
+  )
 }

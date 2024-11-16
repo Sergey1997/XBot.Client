@@ -1,14 +1,26 @@
-import { Link } from "react-router-dom";
-import { Button } from "./button";
-import { useAuth } from "../../context/AuthContext";
+import { Link } from 'react-router-dom'
+import { Button } from './button'
+import { useAuth } from '../../context/AuthContext'
+import ModalWrapper from '../ModalWrapper'
+import { handleCheckout } from '../../services/checkoutService'
 
-export default function PricingSection() {
+export default function PricingSection({
+  isModal = false,
+  showModal = false,
+  onClose = () => {},
+}) {
+  const { user, handleLogin } = useAuth()
 
+  const checkout = async () => {
+    var url = await handleCheckout(user.email || 'test@gmail.com')
 
-    const { user, handleGoogleSignIn } = useAuth();
-
-  return (
-    <div className="w-full max-w-6xl mt-16 mb-16 p-8 rounded-lg space-y-8">
+    window.location.href = url
+  }
+  // Content of Pricing Section
+  const content = (
+    <div
+      className={`w-full max-w-6xl mt-16 mb-16 p-8 rounded-lg space-y-8 ${isModal ? '' : 'mx-auto'}`}
+    >
       <h2 className="text-3xl font-bold text-center mb-8">Pricing</h2>
       <div className="flex flex-wrap justify-center lg:space-x-4 space-y-4 lg:space-y-0 items-stretch">
         {pricingOptions.map((option, index) => (
@@ -36,7 +48,7 @@ export default function PricingSection() {
               </ul>
             </div>
             <div className="mt-10 text-center">
-              <Link onClick={handleGoogleSignIn} to="">
+              <Link to="" onClick={checkout}>
                 <Button className="w-3/4">{option.buttonText}</Button>
               </Link>
             </div>
@@ -44,43 +56,43 @@ export default function PricingSection() {
         ))}
       </div>
     </div>
-  );
+  )
+
+  // Decide if the content should be wrapped in a Modal
+  return isModal ? (
+    <ModalWrapper isVisible={showModal} onClose={onClose}>
+      {content}
+    </ModalWrapper>
+  ) : (
+    content
+  )
 }
 
 const pricingOptions = [
   {
-    title: "Starter",
-    price: "$ 8.99",
+    title: 'Starter',
+    price: '$ 8.99',
     description:
-      "Perfect for individuals looking to enhance their online presence.",
-    features: [
-      "10 Comments per day",
-    ],
-    buttonText: "Choose Starter",
-    bgColor: "bg-white",
+      'Perfect for individuals looking to enhance their online presence.',
+    features: ['10 Comments per day'],
+    buttonText: 'Choose Starter',
+    bgColor: 'bg-white',
   },
   {
-    title: "Basic",
-    price: "$ 18.99",
+    title: 'Basic',
+    price: '$ 18.99',
     description:
-      "Ideal for those who want to significantly increase their audience engagement.",
-    features: [
-      "10 Comments per day",
-      "Live support"
-    ],
-    buttonText: "Choose Basic",
-    bgColor: "bg-blue-50",
+      'Ideal for those who want to significantly increase their audience engagement.',
+    features: ['10 Comments per day', 'Live support'],
+    buttonText: 'Choose Basic',
+    bgColor: 'bg-blue-50',
   },
   {
-    title: "Premium",
-    price: "Negotiate",
-    description: "Custom engagement plan",
-    features: [
-        "10 Comments per day",
-        "Live support",
-        "Custom features"
-      ],
-    buttonText: "Contact for Pricing",
-    bgColor: "bg-white",
+    title: 'Premium',
+    price: 'Negotiate',
+    description: 'Custom engagement plan',
+    features: ['10 Comments per day', 'Live support', 'Custom features'],
+    buttonText: 'Contact for Pricing',
+    bgColor: 'bg-white',
   },
-];
+]
