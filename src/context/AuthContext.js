@@ -15,35 +15,29 @@ const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate()
-  setPersistence(auth, browserLocalPersistence)
 
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      console.log(user)
-      if (user) {
-        const uid = user.uid
-        // Fetch additional user info from Firestore
-        const userRef = doc(db, 'users', user.uid)
-        const userDoc = await getDoc(userRef)
-        if (userDoc.exists()) {
-          const userData = userDoc.data()
-          console.log(userData)
-          setUser({ ...user, ...userData })
-        } else {
+    const initializeAuth = async () => {
+      await setPersistence(auth, browserLocalPersistence)
+
+      const unsubscribe = onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const userRef = doc(db, 'users', user.uid)
+          const docSnap = await getDoc(userRef)
+          setUser({ ...user, ...docSnap.data() })
           console.log(user)
-          setUser(user)
+          // Fetch and set user data
+        } else {
+          setUser(null)
         }
-      } else {
-        console.log('set user to null')
-        setUser(null)
-      }
-    })
-    return () => {
-      console.log('set user to unsubscribe')
-      unsubscribe()
+      })
+
+      return () => unsubscribe()
     }
+
+    initializeAuth()
   }, [])
 
   const handleLogout = async () => {
@@ -64,51 +58,51 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
-  const handleLogin = async () => {
-    try {
-      const provider = new TwitterAuthProvider()
+  const handleLogin = () => {
+    const provider = new TwitterAuthProvider()
 
-      // Properly await the signInWithPopup without chaining .then()
-      const result = await signInWithPopup(auth, provider)
-      console.log(result)
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        if (result.user) {
+          const credential = TwitterAuthProvider.credentialFromResult(result)
 
-      // Make sure user and credential are defined before using them
-      if (result.user) {
-        setUser(result.user)
-        const credential = TwitterAuthProvider.credentialFromResult(result)
+          if (credential) {
+            const userData = {
+              uid: result.user.uid,
+              displayName: result.user.displayName,
+              lastSignInTime: result.user.metadata.lastSignInTime,
+              accessToken: credential.accessToken,
+              secret: credential.secret,
+            }
 
-        if (credential) {
-          const userData = {
-            uid: result.user.uid,
-            displayName: result.user.displayName,
-            lastSignInTime: result.user.metadata.lastSignInTime,
-            accessToken: credential.accessToken,
-            secret: credential.secret,
+            // Here, you set user data in your state and possibly Firestore
+            setUser({ ...userData }) // Set user state locally
+
+            // Save to Firestore
+            const userRef = doc(db, 'users', userData.uid)
+            setDoc(userRef, userData, { merge: true })
+              .then(() => {
+                console.log('User data saved to Firestore!')
+                navigate('/dashboard')
+              })
+              .catch((error) => {
+                console.error('Error saving user data to Firestore:', error)
+              })
+          } else {
+            console.error('No credential found from the Twitter Auth result')
           }
-
-          // Where user data is saved in Firestore
-          const userRef = doc(db, 'users', userData.uid)
-          await setDoc(userRef, userData, { merge: true })
-          console.log('User data saved to Firestore!')
-
-          // Assuming navigate is a function you import or define that handles navigation.
-          navigate('/dashboard')
         } else {
-          console.error('No credential found from the Twitter Auth result')
+          console.error('No user found in the Twitter Auth result')
         }
-      } else {
-        console.error('No user found in the Twitter Auth result')
-      }
-    } catch (error) {
-      // Improved error handling
-      console.error('Error with Twitter login or Firestore operation:', error)
-      if (error.code) {
-        console.error('Firebase error code:', error.code)
-      }
-      if (error.message) {
-        console.error('Firebase error message:', error.message)
-      }
-    }
+      })
+      .catch((error) => {
+        console.error('Error with Twitter login:', error)
+        if (error.code && error.message) {
+          console.error(
+            `Firebase error code: ${error.code}, message: ${error.message}`
+          )
+        }
+      })
   }
 
   return (

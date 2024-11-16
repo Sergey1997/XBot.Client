@@ -12,9 +12,12 @@ export default function PricingSection({
   const { user, handleLogin } = useAuth()
 
   const checkout = async () => {
-    var url = await handleCheckout(user.email || 'test@gmail.com')
+    var url = await handleCheckout(user?.email || user?.uid + 'test@gmail.com')
 
-    window.location.href = url
+    console.log(url)
+    if (url) {
+      window.location.href = url
+    }
   }
   // Content of Pricing Section
   const content = (
