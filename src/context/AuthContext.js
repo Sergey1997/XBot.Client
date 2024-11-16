@@ -28,7 +28,6 @@ export const AuthProvider = ({ children }) => {
           const docSnap = await getDoc(userRef)
           setUser({ ...user, ...docSnap.data() })
           console.log(user)
-          // Fetch and set user data
         } else {
           setUser(null)
         }
