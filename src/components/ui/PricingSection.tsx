@@ -52,7 +52,7 @@ export default function PricingSection({
             </div>
             <div className="mt-10 text-center">
               <Link to="" onClick={checkout}>
-                <Button className="w-3/4">{option.buttonText}</Button>
+                <Button>{option.buttonText}</Button>
               </Link>
             </div>
           </div>

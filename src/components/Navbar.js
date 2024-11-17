@@ -26,7 +26,7 @@ const Navbar = () => {
       {user && (
         <div className="hidden lg:flex flex-row gap-2">
           <Link to="/dashboard">
-            <Button variant={'ghost'}>Dashboard</Button>
+            <Button variant={'secondary'}>Dashboard</Button>
           </Link>
           {packsIsEnabled && (
             <Link to="/overview/packs">

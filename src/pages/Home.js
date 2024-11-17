@@ -31,7 +31,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col space-y-2">
               <Link onClick={handleScroll}>
-                <Button className="bg-blue-500 text-white  w-full lg:w-1/2">
+                <Button variant={'primary'}>
                   Get Your AI Comments Bot Now
                 </Button>
               </Link>
