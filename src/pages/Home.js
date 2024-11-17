@@ -1,10 +1,20 @@
 import { useAuth } from '../context/AuthContext'
 import { Button } from '../components/ui/button'
 import { Link } from 'react-router-dom'
+import React, { useRef } from 'react'
 
 const Home = () => {
-  const { handleLogin, handleLogout } = useAuth()
-  const apiKey = process.env.REACT_APP_TWITTER_CONSUMER_KEY
+  const { handleLogin } = useAuth()
+  const targetRef = useRef(null)
+
+  const handleScroll = () => {
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth',
+      })
+    }, 50)
+  }
 
   return (
     <main className="flex flex-1 flex-col items-center py-16">
@@ -20,7 +30,7 @@ const Home = () => {
               and enhance your online presence on Twitter.
             </p>
             <div className="flex flex-col space-y-2">
-              <Link onClick={handleLogin}>
+              <Link onClick={handleScroll}>
                 <Button className="bg-blue-500 text-white  w-full lg:w-1/2">
                   Get Your AI Comments Bot Now
                 </Button>
@@ -43,7 +53,7 @@ const Home = () => {
           <div className="lg:w-1/2 w-full mt-8 lg:mt-0">
             <img
               src="buy-twitter-followers.webp"
-              alt="AI Headshot Illustration"
+              alt="AI X Bot Illustration"
               className="rounded-lg object-cover w-full h-full"
             />
           </div>

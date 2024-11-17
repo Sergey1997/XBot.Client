@@ -8,11 +8,11 @@ import { Suspense } from 'react'
 import { Toaster } from './components/ui/toaster'
 import ExplainerSection from './components/ui/ExplainerSection'
 import PricingSection from './components/ui/PricingSection'
-import CheckoutButton from './components/CheckoutButton'
 import TwitterCallbackPage from './components/TwitterCallbackPage'
 import Dashboard from './pages/Dashboard'
 
 export default function App() {
+  console.log(`Current environment: ${process.env.NODE_ENV}`)
   return (
     <Router>
       <AuthProvider>
