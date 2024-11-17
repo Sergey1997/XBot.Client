@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
-import { Button } from './button'
-import { useAuth } from '../../context/AuthContext'
-import ModalWrapper from '../ModalWrapper'
-import { handleCheckout } from '../../services/checkoutService'
+import { Button } from '../button'
+import { useAuth } from '../../../context/AuthContext'
+import ModalWrapper from '../../ModalWrapper'
+import { handleCheckout } from '../../../services/checkoutService'
+import { HoverCard } from '../hover-card'
+import { Skeleton } from '../skeleton'
 
 export default function PricingSection({
   isModal = false,

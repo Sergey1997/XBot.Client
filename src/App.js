@@ -6,8 +6,8 @@ import { AuthProvider } from './context/AuthContext'
 import './App.css' // Importing App.css
 import { Suspense } from 'react'
 import { Toaster } from './components/ui/toaster'
-import ExplainerSection from './components/ui/ExplainerSection'
-import PricingSection from './components/ui/PricingSection'
+import ExplainerSection from './components/ui/composits/ExplainerSection'
+import PricingSection from './components/ui/composits/PricingSection'
 import TwitterCallbackPage from './components/TwitterCallbackPage'
 import Dashboard from './pages/Dashboard'
 

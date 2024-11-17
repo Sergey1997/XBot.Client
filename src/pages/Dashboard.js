@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { doc, setDoc } from 'firebase/firestore' // Ensure firebase imports are correct
 import { db } from '../firebase/config' // Adjust according to where your firebase config/init is
-import PricingSection from '../components/ui/PricingSection'
+import PricingSection from '../components/ui/composits/PricingSection'
 
 const Dashboard = () => {
   const { user } = useAuth()
@@ -86,10 +86,9 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
-      <div className="w-1/3 mt-10 px-5 space-y-4">
-        {' '}
-        {/* Adjust width as needed */}
+    <div className="flex flex-col sm:flex-row min-h-screen bg-gray-100">
+      <div className="w-full sm:w-1/3 mt-10 px-5 space-y-4">
+        {/* Sidebar/Left Panel content */}
         <h6 className="text-lg font-semibold">Welcome to Your Personal Page</h6>
         {user && (
           <p className="text-xl font-medium text-indigo-600">
@@ -128,10 +127,8 @@ const Dashboard = () => {
         </form>
       </div>
 
-      {/* New Table Container */}
-      <div className="w-3/4 mt-10 px-5 space-y-4">
-        {' '}
-        {/* Adjust width as needed */}
+      {/* Right Panel/Main Content */}
+      <div className="w-full sm:w-3/4 mt-10 px-5 space-y-4">
         <h6 className="text-lg font-semibold">Bot Activity Log</h6>
         <div className="overflow-auto">
           <table className="min-w-full divide-y divide-gray-200">
@@ -158,7 +155,6 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {/* Dynamically populate table rows here */}
               {steps.map((step, index) => (
                 <tr key={index}>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -176,6 +172,7 @@ const Dashboard = () => {
           </table>
         </div>
       </div>
+
       {showPricingModal && (
         <PricingSection
           isModal

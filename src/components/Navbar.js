@@ -26,16 +26,16 @@ const Navbar = () => {
       {user && (
         <div className="hidden lg:flex flex-row gap-2">
           <Link to="/dashboard">
-            <Button variant={'secondary'}>Dashboard</Button>
+            <Button>Dashboard</Button>
           </Link>
           {packsIsEnabled && (
             <Link to="/overview/packs">
-              <Button variant={'ghost'}>Packs</Button>
+              <Button>Packs</Button>
             </Link>
           )}
           {stripeIsConfigured && (
             <Link to="/get-credits">
-              <Button variant={'ghost'}>Get Credits</Button>
+              <Button>Get Credits</Button>
             </Link>
           )}
         </div>
@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="flex gap-4 lg:ml-auto">
         {!user && (
           <Link onClick={handleLogin}>
-            <Button variant={'ghost'}>Login / Signup </Button>
+            <Button>Login / Signup </Button>
           </Link>
         )}
         {user && (
