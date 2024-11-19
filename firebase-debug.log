@@ -1,0 +1,1092 @@
+[debug] [2024-11-19T12:18:42.964Z] ----------------------------------------------------------------------
+[debug] [2024-11-19T12:18:42.969Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Siarhei_Danilovich\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --debug
+[debug] [2024-11-19T12:18:42.970Z] CLI Version:   13.25.0
+[debug] [2024-11-19T12:18:42.970Z] Platform:      win32
+[debug] [2024-11-19T12:18:42.970Z] Node Version:  v20.14.0
+[debug] [2024-11-19T12:18:42.970Z] Time:          Tue Nov 19 2024 15:18:42 GMT+0300 (Moscow Standard Time)
+[debug] [2024-11-19T12:18:42.970Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-19T12:18:43.129Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2024-11-19T12:18:43.136Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"timeoutSeconds"}
+[debug] [2024-11-19T12:18:43.138Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2024-11-19T12:18:43.149Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-19T12:18:43.150Z] > authorizing via signed-in user (tech@growic.com)
+[debug] [2024-11-19T12:18:43.151Z] [iam] checking project xbot-b6af2 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-11-19T12:18:43.154Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:43.156Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:43.158Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions [none]
+[debug] [2024-11-19T12:18:43.159Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:18:43.159Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-11-19T12:18:43.921Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions 200
+[debug] [2024-11-19T12:18:43.922Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-11-19T12:18:43.925Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:43.925Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:43.926Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-11-19T12:18:43.927Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-11-19T12:18:44.545Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-11-19T12:18:44.547Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'xbot-b6af2'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix functions run lint
+[info] Running command: npm --prefix functions run build
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-11-19T12:18:49.438Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:49.438Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:49.439Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 [none]
+[debug] [2024-11-19T12:18:50.256Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 200
+[debug] [2024-11-19T12:18:50.257Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 {"projectId":"xbot-b6af2","projectNumber":"720751576478","displayName":"XBot","name":"projects/xbot-b6af2","resources":{"hostingSite":"xbot-b6af2","realtimeDatabaseInstance":"xbot-b6af2-default-rtdb"},"state":"ACTIVE","etag":"1_518e5d52-41fd-4cd6-a9c8-9e17abac5b51"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2024-11-19T12:18:50.262Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:50.262Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:50.262Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:50.263Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2024-11-19T12:18:50.264Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:50.264Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-11-19T12:18:50.265Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:50.265Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:50.266Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-11-19T12:18:50.266Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:18:50.269Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-11-19T12:18:50.270Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:18:50.272Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com [none]
+[debug] [2024-11-19T12:18:50.272Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:18:50.275Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com [none]
+[debug] [2024-11-19T12:18:50.276Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:18:51.274Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com 200
+[debug] [2024-11-19T12:18:51.274Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-11-19T12:18:51.275Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com 200
+[debug] [2024-11-19T12:18:51.275Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-11-19T12:18:51.281Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com 200
+[debug] [2024-11-19T12:18:51.281Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-11-19T12:18:51.284Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com 200
+[debug] [2024-11-19T12:18:51.284Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-11-19T12:18:51.285Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:51.285Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:51.286Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig [none]
+[debug] [2024-11-19T12:18:51.591Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig 200
+[debug] [2024-11-19T12:18:51.592Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig {"projectId":"xbot-b6af2","databaseURL":"https://xbot-b6af2-default-rtdb.firebaseio.com","storageBucket":"xbot-b6af2.firebasestorage.app"}
+[debug] [2024-11-19T12:18:51.593Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:51.594Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:51.595Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs [none]
+[debug] [2024-11-19T12:18:52.248Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs 200
+[debug] [2024-11-19T12:18:52.250Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs {"configs":[{"name":"projects/xbot-b6af2/configs/app"},{"name":"projects/xbot-b6af2/configs/stripe"}]}
+[debug] [2024-11-19T12:18:52.251Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:52.251Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:52.252Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:52.252Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:52.253Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables [none]
+[debug] [2024-11-19T12:18:52.254Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables [none]
+[debug] [2024-11-19T12:18:52.489Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables 200
+[debug] [2024-11-19T12:18:52.490Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables {"variables":[{"name":"projects/xbot-b6af2/configs/app/variables/base_url","updateTime":"2024-11-19T09:48:24.384169432Z"}]}
+[debug] [2024-11-19T12:18:52.491Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:52.491Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:52.493Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url [none]
+[debug] [2024-11-19T12:18:52.716Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url 200
+[debug] [2024-11-19T12:18:52.717Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url {"name":"projects/xbot-b6af2/configs/app/variables/base_url","updateTime":"2024-11-19T09:48:24.384169432Z","text":"https://x-bot-client.vercel.app"}
+[debug] [2024-11-19T12:18:52.740Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables 200
+[debug] [2024-11-19T12:18:52.741Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables {"variables":[{"name":"projects/xbot-b6af2/configs/stripe/variables/secret_key","updateTime":"2024-11-19T09:47:16.076826846Z"}]}
+[debug] [2024-11-19T12:18:52.742Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:52.742Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:18:52.743Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key [none]
+[debug] [2024-11-19T12:18:52.970Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key 200
+[debug] [2024-11-19T12:18:52.971Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key {"name":"projects/xbot-b6af2/configs/stripe/variables/secret_key","updateTime":"2024-11-19T09:47:16.076826846Z","text":"sk_test_8MdzAXykogwtALmih2Yer01G00FNCSz0NW"}
+[debug] [2024-11-19T12:18:52.975Z] Validating nodejs source
+[debug] [2024-11-19T12:18:55.313Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "echo 'No build step necessary'",
+    "lint": "eslint src/ --fix",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions firebase functions:config:get",
+    "logs": "firebase functions:log",
+    "debug": "node --inspect-brk node_modules/.bin/firebase emulators:start"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "stripe": "^17.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-11-19T12:18:55.317Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-11-19T12:18:55.320Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-11-19T12:18:55.341Z] Found firebase-functions binary at 'C:\Dev\XBot\XBot.Client\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8289
+
+[debug] [2024-11-19T12:18:56.686Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2024-11-19T12:19:01.744Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:01.745Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:01.746Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com [none]
+[debug] [2024-11-19T12:19:01.746Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:19:02.383Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com 200
+[debug] [2024-11-19T12:19:02.383Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com [omitted]
+[info] +  extensions: required API firebaseextensions.googleapis.com is enabled 
+[debug] [2024-11-19T12:19:02.385Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-19T12:19:02.386Z] > authorizing via signed-in user (tech@growic.com)
+[debug] [2024-11-19T12:19:02.386Z] [iam] checking project xbot-b6af2 for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2024-11-19T12:19:02.387Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:02.387Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:02.388Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions [none]
+[debug] [2024-11-19T12:19:02.388Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:19:02.388Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2024-11-19T12:19:02.974Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions 200
+[debug] [2024-11-19T12:19:02.975Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2024-11-19T12:19:02.978Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:02.979Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:02.981Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances pageSize=100&pageToken=
+[debug] [2024-11-19T12:19:03.820Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances 200
+[debug] [2024-11-19T12:19:03.820Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances {}
+[info] i  functions: Loaded environment variables from .env, .env.default. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Dev\XBot\XBot.Client\functions (80.85 KB) for uploading 
+[debug] [2024-11-19T12:19:03.904Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:03.904Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:03.905Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions [none]
+[debug] [2024-11-19T12:19:04.939Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions 200
+[debug] [2024-11-19T12:19:04.940Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions {}
+[debug] [2024-11-19T12:19:04.941Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:04.941Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:04.942Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-11-19T12:19:05.474Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions 200
+[debug] [2024-11-19T12:19:05.475Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions {"functions":[{"name":"projects/xbot-b6af2/locations/us-central1/functions/helloWorld","buildConfig":{"build":"projects/720751576478/locations/us-central1/builds/f5de1ffc-9204-4570-a309-ff666f7b6977","runtime":"nodejs20","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-720751576478-us-central1","object":"helloWorld/function-source.zip","generation":"1732018454341448"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts","serviceAccount":"projects/xbot-b6af2/serviceAccounts/720751576478-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/xbot-b6af2/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"APP_BASE_URL":"https://x-bot-client.vercel.app","STRIPE_SECRET_KEY":"sk_test_8MdzAXykogwtALmih2Yer01G00FNCSz0NW","FIREBASE_CONFIG":"{\"projectId\":\"xbot-b6af2\",\"databaseURL\":\"https://xbot-b6af2-default-rtdb.firebaseio.com\",\"storageBucket\":\"xbot-b6af2.firebasestorage.app\"}","GCLOUD_PROJECT":"xbot-b6af2","EVENTARC_CLOUD_EVENT_SOURCE":"projects/xbot-b6af2/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld","LOG_EXECUTION_ID":"true"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"720751576478-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"helloworld-00001-jim","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2024-11-19T12:15:24.432731187Z","labels":{"firebase-functions-hash":"b66e2b0a4bd871ae6c3928f342a30aeab0766bc2","deployment-tool":"cli-firebase"},"environment":"GEN_2","url":"https://us-central1-xbot-b6af2.cloudfunctions.net/helloWorld","createTime":"2024-11-19T12:07:04.577579260Z"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[debug] [2024-11-19T12:19:05.480Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:05.480Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[debug] [2024-11-19T12:19:05.481Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:05.481Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[debug] [2024-11-19T12:19:05.482Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:05.482Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-11-19T12:19:05.483Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:05.483Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:05.484Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com [none]
+[debug] [2024-11-19T12:19:05.484Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:19:05.485Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com [none]
+[debug] [2024-11-19T12:19:05.485Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:19:05.488Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com [none]
+[debug] [2024-11-19T12:19:05.488Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:19:05.491Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com [none]
+[debug] [2024-11-19T12:19:05.491Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:19:05.869Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com 200
+[debug] [2024-11-19T12:19:05.870Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2024-11-19T12:19:06.262Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com 200
+[debug] [2024-11-19T12:19:06.262Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2024-11-19T12:19:06.267Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com 200
+[debug] [2024-11-19T12:19:06.267Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2024-11-19T12:19:06.269Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com 200
+[debug] [2024-11-19T12:19:06.270Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[debug] [2024-11-19T12:19:06.272Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:06.272Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-11-19T12:19:06.273Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:06.273Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:06.273Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-11-19T12:19:06.275Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-11-19T12:19:06.704Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-11-19T12:19:06.705Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-720751576478@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"112196532273883642302"}}
+[debug] [2024-11-19T12:19:06.767Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-11-19T12:19:06.767Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-720751576478@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"107392330681528283081"}}
+[debug] [2024-11-19T12:19:06.771Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:06.771Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:06.772Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 [none]
+[debug] [2024-11-19T12:19:07.396Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 200
+[debug] [2024-11-19T12:19:07.398Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 {"projectId":"xbot-b6af2","projectNumber":"720751576478","displayName":"XBot","name":"projects/xbot-b6af2","resources":{"hostingSite":"xbot-b6af2","realtimeDatabaseInstance":"xbot-b6af2-default-rtdb"},"state":"ACTIVE","etag":"1_518e5d52-41fd-4cd6-a9c8-9e17abac5b51"}
+[debug] [2024-11-19T12:19:07.401Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:07.403Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:07.404Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo [none]
+[debug] [2024-11-19T12:19:08.151Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo 200
+[debug] [2024-11-19T12:19:08.152Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo {"name":"projects/xbot-b6af2/billingInfo","projectId":"xbot-b6af2","billingAccountName":"billingAccounts/014566-142178-56F53F","billingEnabled":true}
+[info] i  functions: Skipping the deploy of unchanged functions. 
+[info] +  functions[helloWorld(us-central1)] Skipped (No changes detected) 
+[debug] [2024-11-19T12:19:08.165Z] Total Function Deployment time: 2
+[debug] [2024-11-19T12:19:08.165Z] 0 Functions Deployed
+[debug] [2024-11-19T12:19:08.166Z] 0 Functions Errored
+[debug] [2024-11-19T12:19:08.166Z] 0 Function Deployments Aborted
+[debug] [2024-11-19T12:19:08.167Z] Average Function Deployment time: NaN
+[debug] [2024-11-19T12:19:08.598Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-11-19T12:19:08.601Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:08.602Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:08.603Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:08.604Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:08.604Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world [none]
+[debug] [2024-11-19T12:19:08.606Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:19:09.101Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:19:09.102Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:19:09.102Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[debug] [2024-11-19T12:19:09.106Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:09.107Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:09.107Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:19:09.220Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world 404
+[debug] [2024-11-19T12:19:09.221Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world {"error":{"code":404,"message":"Package \"projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-11-19T12:19:09.379Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:19:09.380Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:19:09.381Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[debug] [2024-11-19T12:19:09.493Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:09.495Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:19:09.495Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:19:09.760Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:19:09.760Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:19:09.761Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/gcr/images/xbot-b6af2/us/gcf 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/xbot-b6af2/overview
+[debug] [2024-11-19T12:22:57.674Z] ----------------------------------------------------------------------
+[debug] [2024-11-19T12:22:57.679Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Siarhei_Danilovich\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --debug
+[debug] [2024-11-19T12:22:57.679Z] CLI Version:   13.25.0
+[debug] [2024-11-19T12:22:57.680Z] Platform:      win32
+[debug] [2024-11-19T12:22:57.680Z] Node Version:  v20.14.0
+[debug] [2024-11-19T12:22:57.680Z] Time:          Tue Nov 19 2024 15:22:57 GMT+0300 (Moscow Standard Time)
+[debug] [2024-11-19T12:22:57.680Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-19T12:22:57.775Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2024-11-19T12:22:57.777Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"timeoutSeconds"}
+[debug] [2024-11-19T12:22:57.778Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2024-11-19T12:22:57.784Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-19T12:22:57.785Z] > authorizing via signed-in user (tech@growic.com)
+[debug] [2024-11-19T12:22:57.786Z] [iam] checking project xbot-b6af2 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-11-19T12:22:57.788Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:22:57.789Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:22:57.790Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions [none]
+[debug] [2024-11-19T12:22:57.791Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:22:57.791Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-11-19T12:22:58.471Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions 200
+[debug] [2024-11-19T12:22:58.471Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-11-19T12:22:58.472Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:22:58.473Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:22:58.473Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-11-19T12:22:58.473Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-11-19T12:22:59.083Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-11-19T12:22:59.084Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'xbot-b6af2'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix functions run lint
+[info] Running command: npm --prefix functions run build
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-11-19T12:23:02.578Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:02.579Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:02.579Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 [none]
+[debug] [2024-11-19T12:23:03.183Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 200
+[debug] [2024-11-19T12:23:03.184Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 {"projectId":"xbot-b6af2","projectNumber":"720751576478","displayName":"XBot","name":"projects/xbot-b6af2","resources":{"hostingSite":"xbot-b6af2","realtimeDatabaseInstance":"xbot-b6af2-default-rtdb"},"state":"ACTIVE","etag":"1_518e5d52-41fd-4cd6-a9c8-9e17abac5b51"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2024-11-19T12:23:03.186Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:03.187Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:03.187Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:03.188Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2024-11-19T12:23:03.188Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:03.189Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-11-19T12:23:03.189Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:03.190Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:03.190Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-11-19T12:23:03.191Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:23:03.193Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-11-19T12:23:03.193Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:23:03.195Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com [none]
+[debug] [2024-11-19T12:23:03.195Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:23:03.197Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com [none]
+[debug] [2024-11-19T12:23:03.197Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:23:03.891Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com 200
+[debug] [2024-11-19T12:23:03.892Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-11-19T12:23:03.896Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com 200
+[debug] [2024-11-19T12:23:03.897Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-11-19T12:23:03.902Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com 200
+[debug] [2024-11-19T12:23:03.902Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-11-19T12:23:03.904Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com 200
+[debug] [2024-11-19T12:23:03.904Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-11-19T12:23:03.905Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:03.905Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:03.905Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig [none]
+[debug] [2024-11-19T12:23:04.304Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig 200
+[debug] [2024-11-19T12:23:04.304Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig {"projectId":"xbot-b6af2","databaseURL":"https://xbot-b6af2-default-rtdb.firebaseio.com","storageBucket":"xbot-b6af2.firebasestorage.app"}
+[debug] [2024-11-19T12:23:04.305Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:04.305Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:04.306Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs [none]
+[debug] [2024-11-19T12:23:04.868Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs 200
+[debug] [2024-11-19T12:23:04.868Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs {"configs":[{"name":"projects/xbot-b6af2/configs/app"},{"name":"projects/xbot-b6af2/configs/stripe"}]}
+[debug] [2024-11-19T12:23:04.869Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:04.870Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:04.870Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:04.870Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:04.871Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables [none]
+[debug] [2024-11-19T12:23:04.872Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables [none]
+[debug] [2024-11-19T12:23:05.108Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables 200
+[debug] [2024-11-19T12:23:05.109Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables {"variables":[{"name":"projects/xbot-b6af2/configs/app/variables/base_url","updateTime":"2024-11-19T09:48:24.384169432Z"}]}
+[debug] [2024-11-19T12:23:05.110Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:05.110Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:05.111Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url [none]
+[debug] [2024-11-19T12:23:05.356Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url 200
+[debug] [2024-11-19T12:23:05.357Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url {"name":"projects/xbot-b6af2/configs/app/variables/base_url","updateTime":"2024-11-19T09:48:24.384169432Z","text":"https://x-bot-client.vercel.app"}
+[debug] [2024-11-19T12:23:05.402Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables 200
+[debug] [2024-11-19T12:23:05.402Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables {"variables":[{"name":"projects/xbot-b6af2/configs/stripe/variables/secret_key","updateTime":"2024-11-19T09:47:16.076826846Z"}]}
+[debug] [2024-11-19T12:23:05.403Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:05.403Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:05.403Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key [none]
+[debug] [2024-11-19T12:23:05.615Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key 200
+[debug] [2024-11-19T12:23:05.616Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key {"name":"projects/xbot-b6af2/configs/stripe/variables/secret_key","updateTime":"2024-11-19T09:47:16.076826846Z","text":"sk_test_8MdzAXykogwtALmih2Yer01G00FNCSz0NW"}
+[debug] [2024-11-19T12:23:05.623Z] Validating nodejs source
+[debug] [2024-11-19T12:23:07.527Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "echo 'No build step necessary'",
+    "lint": "eslint src/ --fix",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions firebase functions:config:get",
+    "logs": "firebase functions:log",
+    "debug": "node --inspect-brk node_modules/.bin/firebase emulators:start"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "stripe": "^17.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-11-19T12:23:07.534Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-11-19T12:23:07.536Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-11-19T12:23:07.550Z] Found firebase-functions binary at 'C:\Dev\XBot\XBot.Client\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8809
+
+[debug] [2024-11-19T12:23:08.478Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2024-11-19T12:23:13.530Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:13.530Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:13.531Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com [none]
+[debug] [2024-11-19T12:23:13.531Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:23:14.188Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com 200
+[debug] [2024-11-19T12:23:14.189Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com [omitted]
+[info] +  extensions: required API firebaseextensions.googleapis.com is enabled 
+[debug] [2024-11-19T12:23:14.190Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-19T12:23:14.190Z] > authorizing via signed-in user (tech@growic.com)
+[debug] [2024-11-19T12:23:14.191Z] [iam] checking project xbot-b6af2 for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2024-11-19T12:23:14.191Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:14.191Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:14.192Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions [none]
+[debug] [2024-11-19T12:23:14.192Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:23:14.192Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2024-11-19T12:23:14.655Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions 200
+[debug] [2024-11-19T12:23:14.656Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2024-11-19T12:23:14.657Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:14.657Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:14.658Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances pageSize=100&pageToken=
+[debug] [2024-11-19T12:23:15.273Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances 200
+[debug] [2024-11-19T12:23:15.274Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances {}
+[info] i  functions: Loaded environment variables from .env, .env.default. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Dev\XBot\XBot.Client\functions (80.85 KB) for uploading 
+[debug] [2024-11-19T12:23:15.384Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:15.385Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:15.386Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions [none]
+[debug] [2024-11-19T12:23:16.277Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions 200
+[debug] [2024-11-19T12:23:16.278Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions {}
+[debug] [2024-11-19T12:23:16.279Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:16.279Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:16.280Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-11-19T12:23:16.818Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions 200
+[debug] [2024-11-19T12:23:16.818Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions {"functions":[{"name":"projects/xbot-b6af2/locations/us-central1/functions/helloWorld","buildConfig":{"build":"projects/720751576478/locations/us-central1/builds/f5de1ffc-9204-4570-a309-ff666f7b6977","runtime":"nodejs20","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-720751576478-us-central1","object":"helloWorld/function-source.zip","generation":"1732018454341448"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts","serviceAccount":"projects/xbot-b6af2/serviceAccounts/720751576478-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/xbot-b6af2/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"APP_BASE_URL":"https://x-bot-client.vercel.app","STRIPE_SECRET_KEY":"sk_test_8MdzAXykogwtALmih2Yer01G00FNCSz0NW","FIREBASE_CONFIG":"{\"projectId\":\"xbot-b6af2\",\"databaseURL\":\"https://xbot-b6af2-default-rtdb.firebaseio.com\",\"storageBucket\":\"xbot-b6af2.firebasestorage.app\"}","GCLOUD_PROJECT":"xbot-b6af2","EVENTARC_CLOUD_EVENT_SOURCE":"projects/xbot-b6af2/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld","LOG_EXECUTION_ID":"true"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"720751576478-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"helloworld-00001-jim","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2024-11-19T12:15:24.432731187Z","labels":{"firebase-functions-hash":"b66e2b0a4bd871ae6c3928f342a30aeab0766bc2","deployment-tool":"cli-firebase"},"environment":"GEN_2","url":"https://us-central1-xbot-b6af2.cloudfunctions.net/helloWorld","createTime":"2024-11-19T12:07:04.577579260Z"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[debug] [2024-11-19T12:23:16.824Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:16.825Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[debug] [2024-11-19T12:23:16.825Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:16.826Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[debug] [2024-11-19T12:23:16.826Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:16.827Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-11-19T12:23:16.827Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:16.828Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:16.828Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com [none]
+[debug] [2024-11-19T12:23:16.829Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:23:16.829Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com [none]
+[debug] [2024-11-19T12:23:16.829Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:23:16.835Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com [none]
+[debug] [2024-11-19T12:23:16.836Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:23:16.839Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com [none]
+[debug] [2024-11-19T12:23:16.840Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:23:17.377Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com 200
+[debug] [2024-11-19T12:23:17.378Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2024-11-19T12:23:17.480Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com 200
+[debug] [2024-11-19T12:23:17.480Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2024-11-19T12:23:17.483Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com 200
+[debug] [2024-11-19T12:23:17.484Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[debug] [2024-11-19T12:23:17.559Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com 200
+[debug] [2024-11-19T12:23:17.560Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[debug] [2024-11-19T12:23:17.561Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:17.562Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-11-19T12:23:17.563Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:17.564Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:17.564Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-11-19T12:23:17.566Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-11-19T12:23:18.071Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-11-19T12:23:18.072Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-720751576478@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"107392330681528283081"}}
+[debug] [2024-11-19T12:23:18.089Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-11-19T12:23:18.089Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-720751576478@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"112196532273883642302"}}
+[debug] [2024-11-19T12:23:18.092Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:18.093Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:18.094Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 [none]
+[debug] [2024-11-19T12:23:18.701Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 200
+[debug] [2024-11-19T12:23:18.701Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 {"projectId":"xbot-b6af2","projectNumber":"720751576478","displayName":"XBot","name":"projects/xbot-b6af2","resources":{"hostingSite":"xbot-b6af2","realtimeDatabaseInstance":"xbot-b6af2-default-rtdb"},"state":"ACTIVE","etag":"1_518e5d52-41fd-4cd6-a9c8-9e17abac5b51"}
+[debug] [2024-11-19T12:23:18.702Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:18.703Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:18.703Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo [none]
+[debug] [2024-11-19T12:23:19.216Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo 200
+[debug] [2024-11-19T12:23:19.216Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo {"name":"projects/xbot-b6af2/billingInfo","projectId":"xbot-b6af2","billingAccountName":"billingAccounts/014566-142178-56F53F","billingEnabled":true}
+[info] i  functions: Skipping the deploy of unchanged functions. 
+[info] +  functions[helloWorld(us-central1)] Skipped (No changes detected) 
+[debug] [2024-11-19T12:23:19.228Z] Total Function Deployment time: 1
+[debug] [2024-11-19T12:23:19.229Z] 0 Functions Deployed
+[debug] [2024-11-19T12:23:19.229Z] 0 Functions Errored
+[debug] [2024-11-19T12:23:19.230Z] 0 Function Deployments Aborted
+[debug] [2024-11-19T12:23:19.230Z] Average Function Deployment time: NaN
+[debug] [2024-11-19T12:23:19.718Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-11-19T12:23:19.721Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:19.721Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:19.723Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:19.724Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:19.725Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world [none]
+[debug] [2024-11-19T12:23:19.727Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:23:20.408Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:23:20.408Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:23:20.409Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[debug] [2024-11-19T12:23:20.411Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:20.411Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:20.412Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:23:20.511Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world 404
+[debug] [2024-11-19T12:23:20.512Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world {"error":{"code":404,"message":"Package \"projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-11-19T12:23:20.688Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:23:20.688Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:23:20.689Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[debug] [2024-11-19T12:23:20.792Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:20.793Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:23:20.793Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:23:21.064Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:23:21.065Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:23:21.065Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/gcr/images/xbot-b6af2/us/gcf 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/xbot-b6af2/overview
+[debug] [2024-11-19T12:26:33.917Z] ----------------------------------------------------------------------
+[debug] [2024-11-19T12:26:33.921Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Siarhei_Danilovich\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --debug
+[debug] [2024-11-19T12:26:33.921Z] CLI Version:   13.25.0
+[debug] [2024-11-19T12:26:33.922Z] Platform:      win32
+[debug] [2024-11-19T12:26:33.922Z] Node Version:  v20.14.0
+[debug] [2024-11-19T12:26:33.922Z] Time:          Tue Nov 19 2024 15:26:33 GMT+0300 (Moscow Standard Time)
+[debug] [2024-11-19T12:26:33.922Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-19T12:26:34.016Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2024-11-19T12:26:34.019Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"timeoutSeconds"}
+[debug] [2024-11-19T12:26:34.019Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2024-11-19T12:26:34.024Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-19T12:26:34.025Z] > authorizing via signed-in user (tech@growic.com)
+[debug] [2024-11-19T12:26:34.026Z] [iam] checking project xbot-b6af2 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-11-19T12:26:34.027Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:34.028Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:34.029Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions [none]
+[debug] [2024-11-19T12:26:34.030Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:34.030Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-11-19T12:26:34.746Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions 200
+[debug] [2024-11-19T12:26:34.746Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-11-19T12:26:34.748Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:34.749Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:34.749Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-11-19T12:26:34.750Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-11-19T12:26:35.387Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-11-19T12:26:35.388Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'xbot-b6af2'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix functions run lint
+[info] Running command: npm --prefix functions run build
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-11-19T12:26:38.561Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:38.562Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:38.563Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 [none]
+[debug] [2024-11-19T12:26:39.418Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 200
+[debug] [2024-11-19T12:26:39.419Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 {"projectId":"xbot-b6af2","projectNumber":"720751576478","displayName":"XBot","name":"projects/xbot-b6af2","resources":{"hostingSite":"xbot-b6af2","realtimeDatabaseInstance":"xbot-b6af2-default-rtdb"},"state":"ACTIVE","etag":"1_518e5d52-41fd-4cd6-a9c8-9e17abac5b51"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2024-11-19T12:26:39.421Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:39.421Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:39.422Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:39.422Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2024-11-19T12:26:39.423Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:39.423Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-11-19T12:26:39.424Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:39.424Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:39.425Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-11-19T12:26:39.425Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:39.427Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-11-19T12:26:39.428Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:39.430Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com [none]
+[debug] [2024-11-19T12:26:39.430Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:39.432Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com [none]
+[debug] [2024-11-19T12:26:39.433Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:40.487Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com 200
+[debug] [2024-11-19T12:26:40.487Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-11-19T12:26:40.491Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com 200
+[debug] [2024-11-19T12:26:40.492Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-11-19T12:26:40.494Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com 200
+[debug] [2024-11-19T12:26:40.495Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-11-19T12:26:40.502Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com 200
+[debug] [2024-11-19T12:26:40.504Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-11-19T12:26:40.505Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:40.505Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:40.506Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig [none]
+[debug] [2024-11-19T12:26:40.818Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig 200
+[debug] [2024-11-19T12:26:40.819Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig {"projectId":"xbot-b6af2","databaseURL":"https://xbot-b6af2-default-rtdb.firebaseio.com","storageBucket":"xbot-b6af2.firebasestorage.app"}
+[debug] [2024-11-19T12:26:40.820Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:40.820Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:40.821Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs [none]
+[debug] [2024-11-19T12:26:41.500Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs 200
+[debug] [2024-11-19T12:26:41.501Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs {"configs":[{"name":"projects/xbot-b6af2/configs/app"},{"name":"projects/xbot-b6af2/configs/stripe"}]}
+[debug] [2024-11-19T12:26:41.502Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:41.502Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:41.502Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:41.503Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:41.503Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables [none]
+[debug] [2024-11-19T12:26:41.504Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables [none]
+[debug] [2024-11-19T12:26:41.738Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables 200
+[debug] [2024-11-19T12:26:41.738Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables {"variables":[{"name":"projects/xbot-b6af2/configs/app/variables/base_url","updateTime":"2024-11-19T09:48:24.384169432Z"}]}
+[debug] [2024-11-19T12:26:41.739Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:41.740Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:41.741Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url [none]
+[debug] [2024-11-19T12:26:41.964Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url 200
+[debug] [2024-11-19T12:26:41.965Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url {"name":"projects/xbot-b6af2/configs/app/variables/base_url","updateTime":"2024-11-19T09:48:24.384169432Z","text":"https://x-bot-client.vercel.app"}
+[debug] [2024-11-19T12:26:42.032Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables 200
+[debug] [2024-11-19T12:26:42.033Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables {"variables":[{"name":"projects/xbot-b6af2/configs/stripe/variables/secret_key","updateTime":"2024-11-19T09:47:16.076826846Z"}]}
+[debug] [2024-11-19T12:26:42.034Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:42.034Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:42.034Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key [none]
+[debug] [2024-11-19T12:26:42.265Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key 200
+[debug] [2024-11-19T12:26:42.266Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key {"name":"projects/xbot-b6af2/configs/stripe/variables/secret_key","updateTime":"2024-11-19T09:47:16.076826846Z","text":"sk_test_8MdzAXykogwtALmih2Yer01G00FNCSz0NW"}
+[debug] [2024-11-19T12:26:42.268Z] Validating nodejs source
+[debug] [2024-11-19T12:26:43.771Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "echo 'No build step necessary'",
+    "lint": "eslint src/ --fix",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions firebase functions:config:get",
+    "logs": "firebase functions:log",
+    "debug": "node --inspect-brk node_modules/.bin/firebase emulators:start"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "stripe": "^17.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-11-19T12:26:43.773Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-11-19T12:26:43.774Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-11-19T12:26:43.785Z] Found firebase-functions binary at 'C:\Dev\XBot\XBot.Client\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8070
+
+[debug] [2024-11-19T12:26:44.783Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2024-11-19T12:26:49.835Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:49.836Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:49.836Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com [none]
+[debug] [2024-11-19T12:26:49.836Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:50.485Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com 200
+[debug] [2024-11-19T12:26:50.486Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com [omitted]
+[info] +  extensions: required API firebaseextensions.googleapis.com is enabled 
+[debug] [2024-11-19T12:26:50.486Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-19T12:26:50.487Z] > authorizing via signed-in user (tech@growic.com)
+[debug] [2024-11-19T12:26:50.487Z] [iam] checking project xbot-b6af2 for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2024-11-19T12:26:50.488Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:50.488Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:50.488Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions [none]
+[debug] [2024-11-19T12:26:50.489Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:50.489Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2024-11-19T12:26:51.064Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions 200
+[debug] [2024-11-19T12:26:51.064Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2024-11-19T12:26:51.066Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:51.066Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:51.067Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances pageSize=100&pageToken=
+[debug] [2024-11-19T12:26:51.838Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances 200
+[debug] [2024-11-19T12:26:51.841Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances {}
+[info] i  functions: Loaded environment variables from .env, .env.default. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Dev\XBot\XBot.Client\functions (80.85 KB) for uploading 
+[debug] [2024-11-19T12:26:52.000Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:52.000Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:52.001Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions [none]
+[debug] [2024-11-19T12:26:53.041Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions 200
+[debug] [2024-11-19T12:26:53.043Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions {}
+[debug] [2024-11-19T12:26:53.046Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:53.047Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:53.048Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-11-19T12:26:53.668Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions 200
+[debug] [2024-11-19T12:26:53.668Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions {"functions":[{"name":"projects/xbot-b6af2/locations/us-central1/functions/helloWorld","buildConfig":{"build":"projects/720751576478/locations/us-central1/builds/f5de1ffc-9204-4570-a309-ff666f7b6977","runtime":"nodejs20","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-720751576478-us-central1","object":"helloWorld/function-source.zip","generation":"1732018454341448"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts","serviceAccount":"projects/xbot-b6af2/serviceAccounts/720751576478-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/xbot-b6af2/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"APP_BASE_URL":"https://x-bot-client.vercel.app","STRIPE_SECRET_KEY":"sk_test_8MdzAXykogwtALmih2Yer01G00FNCSz0NW","FIREBASE_CONFIG":"{\"projectId\":\"xbot-b6af2\",\"databaseURL\":\"https://xbot-b6af2-default-rtdb.firebaseio.com\",\"storageBucket\":\"xbot-b6af2.firebasestorage.app\"}","GCLOUD_PROJECT":"xbot-b6af2","EVENTARC_CLOUD_EVENT_SOURCE":"projects/xbot-b6af2/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld","LOG_EXECUTION_ID":"true"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"720751576478-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"helloworld-00001-jim","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2024-11-19T12:15:24.432731187Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"b66e2b0a4bd871ae6c3928f342a30aeab0766bc2"},"environment":"GEN_2","url":"https://us-central1-xbot-b6af2.cloudfunctions.net/helloWorld","createTime":"2024-11-19T12:07:04.577579260Z"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[debug] [2024-11-19T12:26:53.673Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:53.674Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[debug] [2024-11-19T12:26:53.674Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:53.675Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[debug] [2024-11-19T12:26:53.676Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:53.676Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-11-19T12:26:53.677Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:53.678Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:53.679Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com [none]
+[debug] [2024-11-19T12:26:53.679Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:53.680Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com [none]
+[debug] [2024-11-19T12:26:53.680Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:53.683Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com [none]
+[debug] [2024-11-19T12:26:53.684Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:53.687Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com [none]
+[debug] [2024-11-19T12:26:53.688Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:26:54.066Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com 200
+[debug] [2024-11-19T12:26:54.066Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2024-11-19T12:26:54.319Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com 200
+[debug] [2024-11-19T12:26:54.320Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2024-11-19T12:26:54.342Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com 200
+[debug] [2024-11-19T12:26:54.343Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2024-11-19T12:26:54.359Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com 200
+[debug] [2024-11-19T12:26:54.360Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[debug] [2024-11-19T12:26:54.362Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:54.362Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-11-19T12:26:54.363Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:54.363Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:54.363Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-11-19T12:26:54.364Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-11-19T12:26:54.820Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-11-19T12:26:54.821Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-720751576478@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"112196532273883642302"}}
+[debug] [2024-11-19T12:26:54.914Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-11-19T12:26:54.914Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-720751576478@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"107392330681528283081"}}
+[debug] [2024-11-19T12:26:54.919Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:54.919Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:54.920Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 [none]
+[debug] [2024-11-19T12:26:55.587Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 200
+[debug] [2024-11-19T12:26:55.589Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 {"projectId":"xbot-b6af2","projectNumber":"720751576478","displayName":"XBot","name":"projects/xbot-b6af2","resources":{"hostingSite":"xbot-b6af2","realtimeDatabaseInstance":"xbot-b6af2-default-rtdb"},"state":"ACTIVE","etag":"1_518e5d52-41fd-4cd6-a9c8-9e17abac5b51"}
+[debug] [2024-11-19T12:26:55.591Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:55.591Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:55.592Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo [none]
+[debug] [2024-11-19T12:26:56.302Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo 200
+[debug] [2024-11-19T12:26:56.302Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo {"name":"projects/xbot-b6af2/billingInfo","projectId":"xbot-b6af2","billingAccountName":"billingAccounts/014566-142178-56F53F","billingEnabled":true}
+[info] i  functions: Skipping the deploy of unchanged functions. 
+[info] +  functions[helloWorld(us-central1)] Skipped (No changes detected) 
+[debug] [2024-11-19T12:26:56.309Z] Total Function Deployment time: 0
+[debug] [2024-11-19T12:26:56.309Z] 0 Functions Deployed
+[debug] [2024-11-19T12:26:56.309Z] 0 Functions Errored
+[debug] [2024-11-19T12:26:56.310Z] 0 Function Deployments Aborted
+[debug] [2024-11-19T12:26:56.310Z] Average Function Deployment time: NaN
+[debug] [2024-11-19T12:26:56.850Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-11-19T12:26:56.852Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:56.853Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:56.854Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:56.856Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:56.857Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world [none]
+[debug] [2024-11-19T12:26:56.859Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:26:57.385Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:26:57.385Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:26:57.386Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[debug] [2024-11-19T12:26:57.392Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:57.392Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:57.392Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:26:57.650Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:26:57.651Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:26:57.651Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[debug] [2024-11-19T12:26:57.697Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world 404
+[debug] [2024-11-19T12:26:57.697Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world {"error":{"code":404,"message":"Package \"projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-11-19T12:26:57.764Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:57.766Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:26:57.767Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:26:58.065Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:26:58.065Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:26:58.066Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/gcr/images/xbot-b6af2/us/gcf 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/xbot-b6af2/overview
+[debug] [2024-11-19T12:34:39.320Z] ----------------------------------------------------------------------
+[debug] [2024-11-19T12:34:39.324Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Siarhei_Danilovich\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --debug
+[debug] [2024-11-19T12:34:39.324Z] CLI Version:   13.25.0
+[debug] [2024-11-19T12:34:39.325Z] Platform:      win32
+[debug] [2024-11-19T12:34:39.325Z] Node Version:  v20.14.0
+[debug] [2024-11-19T12:34:39.325Z] Time:          Tue Nov 19 2024 15:34:39 GMT+0300 (Moscow Standard Time)
+[debug] [2024-11-19T12:34:39.325Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-19T12:34:39.443Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2024-11-19T12:34:39.445Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"timeoutSeconds"}
+[debug] [2024-11-19T12:34:39.445Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2024-11-19T12:34:39.454Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-19T12:34:39.456Z] > authorizing via signed-in user (tech@growic.com)
+[debug] [2024-11-19T12:34:39.457Z] [iam] checking project xbot-b6af2 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-11-19T12:34:39.460Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:39.461Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:39.463Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions [none]
+[debug] [2024-11-19T12:34:39.464Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:34:39.464Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-11-19T12:34:40.304Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions 200
+[debug] [2024-11-19T12:34:40.304Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-11-19T12:34:40.305Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:40.306Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:40.306Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-11-19T12:34:40.307Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-11-19T12:34:41.010Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-11-19T12:34:41.011Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/xbot-b6af2/serviceAccounts/xbot-b6af2@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'xbot-b6af2'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix functions run lint
+[info] Running command: npm --prefix functions run build
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-11-19T12:34:44.245Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:44.245Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:44.246Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 [none]
+[debug] [2024-11-19T12:34:45.054Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 200
+[debug] [2024-11-19T12:34:45.055Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 {"projectId":"xbot-b6af2","projectNumber":"720751576478","displayName":"XBot","name":"projects/xbot-b6af2","resources":{"hostingSite":"xbot-b6af2","realtimeDatabaseInstance":"xbot-b6af2-default-rtdb"},"state":"ACTIVE","etag":"1_518e5d52-41fd-4cd6-a9c8-9e17abac5b51"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2024-11-19T12:34:45.058Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:45.058Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:45.059Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:45.059Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2024-11-19T12:34:45.060Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:45.061Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-11-19T12:34:45.062Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:45.062Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:45.062Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-11-19T12:34:45.063Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:34:45.066Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-11-19T12:34:45.067Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:34:45.070Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com [none]
+[debug] [2024-11-19T12:34:45.071Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:34:45.074Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com [none]
+[debug] [2024-11-19T12:34:45.075Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:34:45.900Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com 200
+[debug] [2024-11-19T12:34:45.901Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-11-19T12:34:45.969Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com 200
+[debug] [2024-11-19T12:34:45.971Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-11-19T12:34:45.975Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com 200
+[debug] [2024-11-19T12:34:45.976Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-11-19T12:34:46.082Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com 200
+[debug] [2024-11-19T12:34:46.083Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-11-19T12:34:46.084Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:46.085Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:46.086Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig [none]
+[debug] [2024-11-19T12:34:46.451Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig 200
+[debug] [2024-11-19T12:34:46.453Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2/adminSdkConfig {"projectId":"xbot-b6af2","databaseURL":"https://xbot-b6af2-default-rtdb.firebaseio.com","storageBucket":"xbot-b6af2.firebasestorage.app"}
+[debug] [2024-11-19T12:34:46.454Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:46.455Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:46.457Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs [none]
+[debug] [2024-11-19T12:34:47.123Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs 200
+[debug] [2024-11-19T12:34:47.123Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs {"configs":[{"name":"projects/xbot-b6af2/configs/stripe"},{"name":"projects/xbot-b6af2/configs/app"}]}
+[debug] [2024-11-19T12:34:47.126Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:47.126Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:47.128Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:47.129Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:47.131Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables [none]
+[debug] [2024-11-19T12:34:47.134Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables [none]
+[debug] [2024-11-19T12:34:47.384Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables 200
+[debug] [2024-11-19T12:34:47.385Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables {"variables":[{"name":"projects/xbot-b6af2/configs/stripe/variables/secret_key","updateTime":"2024-11-19T09:47:16.076826846Z"}]}
+[debug] [2024-11-19T12:34:47.386Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:47.386Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:47.386Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key [none]
+[debug] [2024-11-19T12:34:47.629Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key 200
+[debug] [2024-11-19T12:34:47.632Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/stripe/variables/secret_key {"name":"projects/xbot-b6af2/configs/stripe/variables/secret_key","updateTime":"2024-11-19T09:47:16.076826846Z","text":"sk_test_8MdzAXykogwtALmih2Yer01G00FNCSz0NW"}
+[debug] [2024-11-19T12:34:47.658Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables 200
+[debug] [2024-11-19T12:34:47.659Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables {"variables":[{"name":"projects/xbot-b6af2/configs/app/variables/base_url","updateTime":"2024-11-19T09:48:24.384169432Z"}]}
+[debug] [2024-11-19T12:34:47.660Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:47.660Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:47.661Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url [none]
+[debug] [2024-11-19T12:34:47.922Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url 200
+[debug] [2024-11-19T12:34:47.923Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/xbot-b6af2/configs/app/variables/base_url {"name":"projects/xbot-b6af2/configs/app/variables/base_url","updateTime":"2024-11-19T09:48:24.384169432Z","text":"https://x-bot-client.vercel.app"}
+[debug] [2024-11-19T12:34:47.932Z] Validating nodejs source
+[debug] [2024-11-19T12:34:50.467Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "echo 'No build step necessary'",
+    "lint": "eslint src/ --fix",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions firebase functions:config:get",
+    "logs": "firebase functions:log",
+    "debug": "node --inspect-brk node_modules/.bin/firebase emulators:start"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "stripe": "^17.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-11-19T12:34:50.471Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-11-19T12:34:50.473Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-11-19T12:34:50.497Z] Found firebase-functions binary at 'C:\Dev\XBot\XBot.Client\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8594
+
+[debug] [2024-11-19T12:34:51.438Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2024-11-19T12:34:56.496Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:56.496Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:56.497Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com [none]
+[debug] [2024-11-19T12:34:56.497Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:34:57.193Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com 200
+[debug] [2024-11-19T12:34:57.194Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/firebaseextensions.googleapis.com [omitted]
+[info] +  extensions: required API firebaseextensions.googleapis.com is enabled 
+[debug] [2024-11-19T12:34:57.195Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-19T12:34:57.195Z] > authorizing via signed-in user (tech@growic.com)
+[debug] [2024-11-19T12:34:57.196Z] [iam] checking project xbot-b6af2 for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2024-11-19T12:34:57.196Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:57.196Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:57.197Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions [none]
+[debug] [2024-11-19T12:34:57.197Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:34:57.197Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2024-11-19T12:34:57.812Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions 200
+[debug] [2024-11-19T12:34:57.814Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/xbot-b6af2:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2024-11-19T12:34:57.815Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:57.816Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:57.819Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances pageSize=100&pageToken=
+[debug] [2024-11-19T12:34:58.617Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances 200
+[debug] [2024-11-19T12:34:58.618Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/xbot-b6af2/instances {}
+[info] i  functions: Loaded environment variables from .env, .env.default. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Dev\XBot\XBot.Client\functions (80.85 KB) for uploading 
+[debug] [2024-11-19T12:34:58.797Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:58.797Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:58.798Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions [none]
+[debug] [2024-11-19T12:34:59.814Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions 200
+[debug] [2024-11-19T12:34:59.815Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/xbot-b6af2/locations/-/functions {}
+[debug] [2024-11-19T12:34:59.816Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:59.816Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:34:59.816Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-11-19T12:35:00.353Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions 200
+[debug] [2024-11-19T12:35:00.354Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/xbot-b6af2/locations/-/functions {"functions":[{"name":"projects/xbot-b6af2/locations/us-central1/functions/helloWorld","buildConfig":{"build":"projects/720751576478/locations/us-central1/builds/f5de1ffc-9204-4570-a309-ff666f7b6977","runtime":"nodejs20","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-720751576478-us-central1","object":"helloWorld/function-source.zip","generation":"1732018454341448"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts","serviceAccount":"projects/xbot-b6af2/serviceAccounts/720751576478-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/xbot-b6af2/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"APP_BASE_URL":"https://x-bot-client.vercel.app","STRIPE_SECRET_KEY":"sk_test_8MdzAXykogwtALmih2Yer01G00FNCSz0NW","FIREBASE_CONFIG":"{\"projectId\":\"xbot-b6af2\",\"databaseURL\":\"https://xbot-b6af2-default-rtdb.firebaseio.com\",\"storageBucket\":\"xbot-b6af2.firebasestorage.app\"}","GCLOUD_PROJECT":"xbot-b6af2","EVENTARC_CLOUD_EVENT_SOURCE":"projects/xbot-b6af2/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld","LOG_EXECUTION_ID":"true"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"720751576478-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"helloworld-00001-jim","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2024-11-19T12:15:24.432731187Z","labels":{"firebase-functions-hash":"b66e2b0a4bd871ae6c3928f342a30aeab0766bc2","deployment-tool":"cli-firebase"},"environment":"GEN_2","url":"https://us-central1-xbot-b6af2.cloudfunctions.net/helloWorld","createTime":"2024-11-19T12:07:04.577579260Z"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[debug] [2024-11-19T12:35:00.362Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:00.362Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[debug] [2024-11-19T12:35:00.364Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:00.365Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[debug] [2024-11-19T12:35:00.366Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:00.366Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-11-19T12:35:00.366Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:00.366Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:00.367Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com [none]
+[debug] [2024-11-19T12:35:00.368Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:35:00.369Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com [none]
+[debug] [2024-11-19T12:35:00.369Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:35:00.373Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com [none]
+[debug] [2024-11-19T12:35:00.375Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:35:00.378Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com [none]
+[debug] [2024-11-19T12:35:00.379Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com x-goog-quota-user=projects/xbot-b6af2
+[debug] [2024-11-19T12:35:00.636Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com 200
+[debug] [2024-11-19T12:35:00.639Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2024-11-19T12:35:01.027Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com 200
+[debug] [2024-11-19T12:35:01.028Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2024-11-19T12:35:01.033Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com 200
+[debug] [2024-11-19T12:35:01.034Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2024-11-19T12:35:01.052Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com 200
+[debug] [2024-11-19T12:35:01.054Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/xbot-b6af2/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[debug] [2024-11-19T12:35:01.056Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:01.057Z] Checked if tokens are valid: true, expires at: 1732021554085
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-11-19T12:35:01.057Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:01.058Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:01.058Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-11-19T12:35:01.059Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-11-19T12:35:01.372Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-11-19T12:35:01.373Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-720751576478@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"112196532273883642302"}}
+[debug] [2024-11-19T12:35:01.512Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-11-19T12:35:01.513Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/720751576478/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-720751576478@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"107392330681528283081"}}
+[debug] [2024-11-19T12:35:01.516Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:01.516Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:01.516Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 [none]
+[debug] [2024-11-19T12:35:02.210Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 200
+[debug] [2024-11-19T12:35:02.210Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/xbot-b6af2 {"projectId":"xbot-b6af2","projectNumber":"720751576478","displayName":"XBot","name":"projects/xbot-b6af2","resources":{"hostingSite":"xbot-b6af2","realtimeDatabaseInstance":"xbot-b6af2-default-rtdb"},"state":"ACTIVE","etag":"1_518e5d52-41fd-4cd6-a9c8-9e17abac5b51"}
+[debug] [2024-11-19T12:35:02.211Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:02.212Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:02.212Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo [none]
+[debug] [2024-11-19T12:35:02.849Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo 200
+[debug] [2024-11-19T12:35:02.849Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/xbot-b6af2/billingInfo {"name":"projects/xbot-b6af2/billingInfo","projectId":"xbot-b6af2","billingAccountName":"billingAccounts/014566-142178-56F53F","billingEnabled":true}
+[info] i  functions: Skipping the deploy of unchanged functions. 
+[info] +  functions[helloWorld(us-central1)] Skipped (No changes detected) 
+[debug] [2024-11-19T12:35:02.854Z] Total Function Deployment time: 0
+[debug] [2024-11-19T12:35:02.855Z] 0 Functions Deployed
+[debug] [2024-11-19T12:35:02.855Z] 0 Functions Errored
+[debug] [2024-11-19T12:35:02.855Z] 0 Function Deployments Aborted
+[debug] [2024-11-19T12:35:02.855Z] Average Function Deployment time: NaN
+[debug] [2024-11-19T12:35:03.268Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-11-19T12:35:03.269Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:03.270Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:03.271Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:03.271Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:03.272Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world [none]
+[debug] [2024-11-19T12:35:03.275Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:35:03.796Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world 404
+[debug] [2024-11-19T12:35:03.797Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world {"error":{"code":404,"message":"Package \"projects/xbot-b6af2/locations/us-central1/repositories/gcf-artifacts/packages/hello_world\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-11-19T12:35:03.989Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:35:03.989Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:35:03.990Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[debug] [2024-11-19T12:35:04.004Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:04.005Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:04.006Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:35:04.264Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:35:04.265Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:35:04.265Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[debug] [2024-11-19T12:35:04.374Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:04.375Z] Checked if tokens are valid: true, expires at: 1732021554085
+[debug] [2024-11-19T12:35:04.376Z] >>> [apiv2][query] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list [none]
+[debug] [2024-11-19T12:35:04.672Z] <<< [apiv2][status] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list 404
+[debug] [2024-11-19T12:35:04.672Z] <<< [apiv2][body] GET https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-11-19T12:35:04.673Z] Failed docker command with error  Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://us.gcr.io/v2/xbot-b6af2/gcf/us-central1/tags/list had HTTP Error: 404, Not Found","status":404}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/gcr/images/xbot-b6af2/us/gcf 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/xbot-b6af2/overview
+[debug] [2024-11-19T12:40:16.084Z] ----------------------------------------------------------------------
+[debug] [2024-11-19T12:40:16.092Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Siarhei_Danilovich\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-11-19T12:40:16.093Z] CLI Version:   13.25.0
+[debug] [2024-11-19T12:40:16.094Z] Platform:      win32
+[debug] [2024-11-19T12:40:16.094Z] Node Version:  v20.14.0
+[debug] [2024-11-19T12:40:16.095Z] Time:          Tue Nov 19 2024 15:40:16 GMT+0300 (Moscow Standard Time)
+[debug] [2024-11-19T12:40:16.095Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-19T12:40:16.248Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2024-11-19T12:40:16.249Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"timeoutSeconds"}
+[debug] [2024-11-19T12:40:16.250Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2024-11-19T12:40:16.258Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-19T12:40:16.258Z] > authorizing via signed-in user (tech@growic.com)
+[debug] [2024-11-19T12:40:16.260Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2024-11-19T12:40:16.260Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"timeoutSeconds"}
+[debug] [2024-11-19T12:40:16.261Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Dev\XBot\XBot.Client
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing within an existing Firebase project directory
+

@@ -5,29 +5,34 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
-    "google",
-    "plugin:@typescript-eslint/recommended",
+    'eslint:recommended', // Use recommended ESLint rules
+    'plugin:import/errors', // For import-related rules
+    'plugin:import/warnings', // For additional import warnings
+    'google', // Google style guide
   ],
-  parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: ["tsconfig.json", "tsconfig.dev.json"],
-    sourceType: "module",
+    ecmaVersion: 12, // Supports modern ES features
+    sourceType: 'module', // Allows usage of ES Modules
   },
   ignorePatterns: [
-    "/lib/**/*", // Ignore built files.
-    "/generated/**/*", // Ignore generated files.
+    '/lib/**/*', // Ignore built files
+    '/generated/**/*', // Ignore generated files
   ],
   plugins: [
-    "@typescript-eslint",
-    "import",
+    'import', // For import rules
   ],
   rules: {
-    "quotes": ["error", "double"],
-    "import/no-unresolved": 0,
-    "indent": ["error", 2],
+    quotes: ['error', 'double'], // Enforce double quotes
+    'import/no-unresolved': 0, // Turn off unresolved imports error
+    indent: ['error', 2], // Enforce 2-space indentation
+
+    // Import Rules
+    'import/no-unresolved': 0, // Disable unresolved import errors (useful for aliases)
+    // Code Formatting
+    'max-len': ['warn', { code: 100 }], // Allow longer lines up to 100 characters
+    'no-console': 'off', // Allow console statements (useful for debugging)
+    'require-jsdoc': 'off', // Disable JSDoc requirement for functions
+    'new-cap': 'warn',
+    'no-unused-vars': 'warn'
   },
-};
+}

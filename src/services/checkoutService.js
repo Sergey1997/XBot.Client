@@ -1,8 +1,6 @@
 import { createCheckoutSession } from '../services/apiService'
-import getStripe from '../config/stripe'
 
 export const handleCheckout = async (email) => {
-  const stripe = getStripe()
   console.log(email)
 
   if (!email) {

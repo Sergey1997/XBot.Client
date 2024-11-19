@@ -6,6 +6,7 @@
     {
       "source": "functions",
       "codebase": "default",
+      "timeoutSeconds": 300,
       "ignore": [
         "node_modules",
         ".git",
@@ -14,8 +15,8 @@
         "*.local"
       ],
       "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint",
-        "npm --prefix \"$RESOURCE_DIR\" run build"
+        "npm --prefix functions run lint",
+        "npm --prefix functions run build"
       ]
     }
   ]
