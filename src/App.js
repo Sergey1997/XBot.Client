@@ -13,9 +13,13 @@ import Dashboard from './pages/Dashboard'
 import { useDispatch } from 'react-redux'
 import { getUserWithSubscriptionFromLocalStorage } from './utils/localStorage'
 import { setUser } from './redux/slicers/userSlice'
+import { configureAuthPersistence } from './firebase/auth'
 
 export default function App() {
   console.log(`[App] Current environment: ${process.env.NODE_ENV}`)
+  useEffect(() => {
+    configureAuthPersistence()
+  }, [])
   const dispatch = useDispatch()
 
   var user = getUserWithSubscriptionFromLocalStorage()
