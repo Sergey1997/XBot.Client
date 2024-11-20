@@ -1,9 +1,9 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
+import { getAuth, setPersistence, browserLocalPersistence } from 'firebase/auth'
 import { getAnalytics } from 'firebase/analytics'
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
@@ -13,9 +13,12 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 }
 
+// Инициализация приложения Firebase
 const app = initializeApp(firebaseConfig)
-const auth = getAuth(app)
+
+// Экспорт инициализированных сервисов
 const db = getFirestore(app)
+const auth = getAuth(app)
 const analytics = getAnalytics(app)
 
-export { db, auth, analytics }
+export { app, db, auth, analytics }

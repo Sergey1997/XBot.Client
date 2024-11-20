@@ -1,9 +1,0 @@
-I1119 12:54:56.075309    2564 load.go:37] Reloading schema and connectors...
-I1119 12:54:56.095242    2564 control.go:45] [engine.Service /emulator/client 710e] UpdateSchema(): done sources: schema\schema.gql [1384B] 
-I1119 12:54:56.112648    2564 control.go:73] [engine.Service /emulator/client 710e] UpdateConnector(default): done sources: connector\queries.gql [1855B] connector\mutations.gql [1163B] 
-I1119 12:54:56.148755    2564 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "C:\\Dev\\XBot\\XBot.Client\\dataconnect-generated\\js\\default-connector"
-I1119 12:54:56.155866    2564 collector.go:107] schema extensions wrote into "C:\\Dev\\XBot\\XBot.Client\\dataconnect\\.dataconnect\\schema"
-Generated sources: prelude.gql [65742B] 
-I1119 12:54:56.156885    2564 collector.go:107] connector "default" javascriptSdk wrote into "C:\\Dev\\XBot\\XBot.Client\\dataconnect-generated\\js\\default-connector"
-Generated sources: esm\package.json [17B] index.cjs.js [220B] package.json [623B] index.d.ts [264B] esm\index.esm.js [179B] 
-I1119 12:54:56.194671    2564 installsdk.go:76] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector

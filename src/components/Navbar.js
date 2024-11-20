@@ -8,14 +8,21 @@ import {
   DropdownMenuLabel,
 } from './ui/dropdown-menu'
 import { Button } from './ui/button'
+import { Badge } from './ui/badge'
+import { Label } from './ui/label'
+import { auth, db, app } from '../firebase/config'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
   const stripeIsConfigured =
     process.env.NEXT_PUBLIC_STRIPE_IS_ENABLED === 'true'
   const packsIsEnabled = process.env.NEXT_PUBLIC_TUNE_TYPE === 'packs'
 
-  const { user, handleLogout, handleLogin } = useAuth()
+  const user = useSelector((state) => state.user.user)
+  console.log(user)
+  const { handleLogout, handleLogin } = useAuth()
 
+  console.log(user)
   return (
     <div className="flex w-full px-4 lg:px-40 py-4 items-center border-b text-center gap-8 justify-between">
       <div className="flex gap-2 h-full">
@@ -41,6 +48,15 @@ const Navbar = () => {
         </div>
       )}
       <div className="flex gap-4 lg:ml-auto">
+        <Badge variant="destructive">
+          <Label
+            style={{
+              color: user?.hasSubscription ? 'green' : 'red',
+            }}
+          >
+            Subscription {user?.hasSubscription ? 'Active' : 'Inactive'}
+          </Label>
+        </Badge>
         {!user && (
           <Link onClick={handleLogin}>
             <Button>Login / Signup </Button>

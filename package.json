@@ -8,6 +8,7 @@
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.1.5",
+    "@invertase/firestore-stripe-payments": "^0.0.7",
     "@mui/icons-material": "^6.1.6",
     "@radix-ui/react-aspect-ratio": "^1.0.3",
     "@radix-ui/react-avatar": "^1.0.3",
@@ -25,6 +26,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.4",
     "@radix-ui/react-tooltip": "^1.0.6",
+    "@reduxjs/toolkit": "^2.3.0",
     "@stripe/react-stripe-js": "^2.8.1",
     "@stripe/stripe-js": "^4.9.0",
     "@testing-library/jest-dom": "^5.17.0",
@@ -42,6 +44,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.2",
+    "react-redux": "^9.1.2",
     "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
     "react-twitter-login": "^1.5.0",
@@ -54,7 +57,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "firebase deploy --only functions"
+    "deploy": "firebase deploy --only functions",
+    "serve": "serve -s build"
   },
   "eslintConfig": {
     "extends": [

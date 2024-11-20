@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
-import { doc, setDoc } from 'firebase/firestore' // Ensure firebase imports are correct
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  doc,
+  getDoc,
+  setDoc,
+} from 'firebase/firestore'
 import { db } from '../firebase/config' // Adjust according to where your firebase config/init is
 import PricingSection from '../components/ui/composits/PricingSection'
+import { useSelector } from 'react-redux'
 
 const Dashboard = () => {
-  const { user } = useAuth()
+  const user = useSelector((state) => state.user.user) // Access user from Redux
+
   const [showPricingModal, setShowPricingModal] = useState(false)
   const [formData, setFormData] = useState({
     instructions: '',
@@ -50,7 +60,7 @@ const Dashboard = () => {
     }
   }, [user])
 
-  const handleChange = (event) => {
+  const handleChange = async (event) => {
     const { name, value, type, checked } = event.target
     setFormData({
       ...formData,
@@ -63,15 +73,13 @@ const Dashboard = () => {
   }
 
   const handleSubmit = async (event) => {
-    console.log(user)
-
     event.preventDefault()
-    if (!user?.isSubscriptionAvailable) {
+    if (!user?.hasSubscription) {
       setShowPricingModal(true)
       return
     }
     try {
-      const userRef = doc(db, 'users', user.uid) // Ensure this points to the correct Firestore collection
+      const userRef = doc(db, 'customers', user.uid) // Ensure this points to the correct Firestore collection
       const { instructions, isBotEnabled } = formData
       // Update Firestore with new data
       await setDoc(

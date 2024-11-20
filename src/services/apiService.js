@@ -35,7 +35,7 @@ export const createSubscription = async (
 export const createCheckoutSession = async (email, lineItems) => {
   try {
     const response = await axios.post(
-      `https://createcheckoutsession-720751576478.us-central1.run.app`,
+      `https://createcheckoutsession-fi7qicwivq-uc.a.run.app`,
       { email, lineItems }
     )
     console.log(response)
