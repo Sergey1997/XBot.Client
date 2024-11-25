@@ -16,9 +16,7 @@
         "firebase-debug.*.log",
         "*.local"
       ],
-      "predeploy": [
-        "npm --prefix functions install"
-      ]
+      "predeploy": ["npm --prefix functions install"]
     }
   ],
   "emulators": {
@@ -29,7 +27,7 @@
       "port": 5001
     },
     "firestore": {
-      "port": 8080
+      "port": 8082
     },
     "ui": {
       "enabled": true
